@@ -20,7 +20,7 @@ function createGrid(size) {
             spawn.style.width = width + "px";
             spawn.style.height = height + "px";
             spawn.addEventListener("mouseover", (event) => {
-                event.target.style.backgroundColor = "gray";
+                event.target.style.backgroundColor = colorBackground();
             });
             spawnsRow.appendChild(spawn);
         }
@@ -39,5 +39,16 @@ gridMaker.addEventListener("click", () => {
     // create new grid with number given by user
     createGrid(gridSize);
 });
+
+function getRandomInt(max) {
+  return Math.floor(Math.random() * max);
+}
+
+function colorBackground() {
+    const red = getRandomInt(255);
+    const green = getRandomInt(255);
+    const blue = getRandomInt(255);
+    return `rgb(${red} ${green} ${blue})`;
+}
 
 createGrid(gridSize);

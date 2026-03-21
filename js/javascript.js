@@ -3,6 +3,7 @@ const container = document.querySelector(".container");
 const gridMaker = document.querySelector("button");
 let spawn;
 let gridSize = 16;
+let opacity = 0.0;
 
 // create 16 x 16 grid
 // using flex
@@ -21,6 +22,7 @@ function createGrid(size) {
             spawn.style.height = height + "px";
             spawn.addEventListener("mouseover", (event) => {
                 event.target.style.backgroundColor = colorBackground();
+                event.target.style.opacity = darkenSquares();
             });
             spawnsRow.appendChild(spawn);
         }
@@ -49,6 +51,15 @@ function colorBackground() {
     const green = getRandomInt(255);
     const blue = getRandomInt(255);
     return `rgb(${red} ${green} ${blue})`;
+}
+
+function darkenSquares() {
+    if (opacity == 1) {
+        return opacity = 0.0;
+    } else {
+        opacity += 0.1;
+        return opacity = (Math.ceil(opacity * 10) / 10);
+    }
 }
 
 createGrid(gridSize);

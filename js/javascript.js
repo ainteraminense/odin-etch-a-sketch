@@ -2,6 +2,7 @@
 const container = document.querySelector(".container");
 const gridMaker = document.querySelector("button");
 let spawn;
+let gridSize = 16;
 
 // create 16 x 16 grid
 // using flex
@@ -27,4 +28,14 @@ function createGrid(size) {
     }
 }
 
-createGrid(16);
+gridMaker.addEventListener("click", () => {
+    gridSize = parseInt(prompt("What is the grid size?"));
+    // reset grid
+    while (container.firstChild) {
+        container.removeChild(container.lastChild);
+    }
+    // create new grid with number given by user
+    createGrid(gridSize);
+});
+
+createGrid(gridSize);

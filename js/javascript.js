@@ -13,10 +13,14 @@ function createGrid() {
         for (let j = 0; j < 16; j++) {
             spawn = document.createElement("div");
             spawn.classList.add("spawns");
+            spawn.addEventListener("mouseover", (event) => {
+                event.target.style.backgroundColor = "gray";
+            });
             spawnsRow.appendChild(spawn);
         }
         container.appendChild(spawnsRow);
     }
 }
+
 
 createGrid();

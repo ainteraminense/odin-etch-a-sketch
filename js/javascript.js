@@ -29,7 +29,9 @@ function createGrid(size) {
 }
 
 gridMaker.addEventListener("click", () => {
-    gridSize = parseInt(prompt("What is the grid size?"));
+    do {
+        gridSize = parseInt(prompt("What is the grid size no greater than 100?"));
+    } while (!(gridSize > 0 && gridSize <= 100));
     // reset grid
     while (container.firstChild) {
         container.removeChild(container.lastChild);

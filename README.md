@@ -9,3 +9,6 @@ A button to resent the grid and set the size based on the user input no more tha
 ## Extras
 1. Color the squares randomly
 2. Darken and lighten the opacity of the squares as it moves along.
+
+## Link to the page
+https://ainteraminense.github.io/odin-etch-a-sketch/
